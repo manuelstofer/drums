@@ -1,0 +1,75 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+    "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Drum Machine Demo</title>
+    <link rel="stylesheet" href="../build/build.css">
+    <script type="text/javascript" src="../build/build.js"></script>
+
+    <style type="text/css">
+        body {
+            padding: 40px;
+            font-family: verdana;
+        }
+        .samples {
+            margin-top: 20px;
+            background-color: #eee;
+            padding: 20px;
+            font-size: 0.7em;
+            width: 398px;
+        }
+        .drum-wrapper span{
+            font-size: 12px;
+        }
+    </style>
+    <base href="./demo/">
+</head>
+<body>
+
+    <h1>Drum Machine Demo</h1>
+    <div id="drums">This demo works currently only in chrome</div>
+
+    <script type="text/javascript">
+        var context = new webkitAudioContext();
+
+        // create a gain node
+        var gainNode = context.createGainNode();
+        gainNode.gain.value = 0.8;
+        gainNode.connect(context.destination);
+
+
+        var DrumMachine = require('drums');
+
+        var drumMachine = new DrumMachine({
+            element:        document.getElementById('drums'),
+            context:        context,
+            destination:    gainNode,
+            stepsPerMinute: 240,
+            files: [
+                '2085__opm__kk-set1.wav',
+                '26888__vexst__kick-4.wav',
+                '3145__robbiesurp__dm-snare-bb6-5-close.wav',
+                '406__tictacshutup__click-1-d.wav',
+                '419__tictacshutup__thump-treble.wav',
+                '449__tictacshutup__prac-tom.wav'
+            ]
+        });
+    </script>
+
+    <div class="samples">
+
+        <h3>Sample authors</h3>
+        <p>
+            The used samples are from <a href="http://www.freesound.org">freesound.org</a>
+            and licensed under creative commons.
+        </p>
+        <ul>
+            <li><a href="http://www.freesound.org/people/TicTacShutUp/">TicTacShutUp</a></li>
+            <li><a href="http://www.freesound.org/people/opm/">opm</a></li>
+            <li><a href="http://www.freesound.org/people/robbiesurp/">robiesurp</a></li>
+            <li><a href="http://www.freesound.org/people/VEXST/">VEXST</a></li>
+        </ul>
+    </div>
+</html>
+
+
