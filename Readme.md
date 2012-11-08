@@ -5,7 +5,7 @@
 
 ## Demo
 
-Checkout the [demo](http://manuelstofer.github.com/drums/) has no title attribute.
+Checkout the [demo](http://manuelstofer.github.com/drums/)
 
 ## Installation
 
