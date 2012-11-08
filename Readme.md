@@ -3,16 +3,19 @@
 
   A drum sequencer built with the web audio api
 
+## Demo
+
+Checkout the [demo](http://manuelstofer.github.com/drums/) has no title attribute.
+
 ## Installation
 
-Drums should be installed using component:
+Installation with component:
 
 ```
 component install manuelstofer/drums
 ```
 
-
-Play drums:
+## Play drums:
 ```JS
 
 var DrumMachine = require('drums');
